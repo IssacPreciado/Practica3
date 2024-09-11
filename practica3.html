@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practica 3</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+    <style>
+
+                /* Evitar que la página se mueva horizontalmente */
+                body {
+            overflow-x: hidden; /* Evita el desplazamiento horizontal */
+        }
+
+        .navbar-sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            display: none;
+        }
+
+        .show-navbar {
+            display: block;
+        }
+
+
+        /* Eliminar espacio adicional en la barra de categorías */
+        .navbar {
+            margin-bottom: 0;
+        }
+
+        .navbar-brand {
+            display: flex;
+            justify-content: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            overflow-x: auto;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .navbar-brand img {
+            margin: 0 5px;
+        }
+
+        /* Ajustar el tamaño de las imágenes en pantallas pequeñas */
+        @media (max-width: 576px) {
+            .navbar-brand img {
+                width: 24px;
+                height: 24px;
+            }
+        }
+
+ /* Centrar el contenedor completo del navbar */ 
+        .container { 
+            display: flex; 
+            justify-content: center; 
+            width: 100%; /* Ancho completo de la pantalla */
+            max-width: 100%; /* Elimina el máximo predeterminado */
+        } 
+
+
+        .small-text {
+        font-size: 0.85rem; /* Texto más pequeño */
+    }
+
+    @media (max-width: 768px) {
+        .navbar-text {
+            font-size: 0.75rem; /* Ajuste del tamaño para pantallas pequeñas */
+        }
+    }
+
+    @media (max-width: 576px) {
+        .navbar-text {
+            font-size: 0.65rem; /* Ajuste del tamaño para pantallas aún más pequeñas */
+        }
+    }
+
+    .navbar {
+        width: 100%;
+    }
+
+    .form-inline {
+        display: flex;
+        justify-content: center;
+    }
+
+    .card {
+    width: 100%; /* En lugar de un tamaño fijo */
+    max-width: 100%; /* Limitar el ancho máximo al 100% */
+
+}
+
+.card-img-top {
+    width: 100%;
+    height: auto;
+}
+
+
+
+
+    </style>
+</head>
+
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-2 w-100">
+        <div class="container-fluid">
+        <div class="navbar-nav mx-auto mb-0 d-flex justify-content-center">
+            <div class="navbar-text text-center small-text">
+                <strong>Es noticia:</strong>
+                México - Canadá / Colombia - Argentina EN VIVO / Ecuador vs Perú EN VIVO / Paraguay - Brasil / Venezuela - Uruguay EN VIVO / Venezuela - Uruguay /
+                Partidos hoy / GP Azerbaiyán 2024 / Beca Telmex / Pensión Bienestar / iPhone 
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <div class="container-fluid mt-4">
+        <!-- Sección principal con alineación centrada -->
+        <div class="row justify-content-between align-items-center ">
+            <!-- Sección izquierda -->
+            <div class="col-12 col-md-4 d-flex align-items-center">
+                <!-- Radio Marca -->
+                <div class="d-flex align-items-center mr-4">
+                    <img src="https://pbs.twimg.com/profile_images/826427762713976832/17puyG96_400x400.jpg" width="30" height="30" class="img-fluid mr-2" alt="Radio Marca">
+                    <div>
+                        <strong class="d-block">Radio MARCA</strong>
+                    </div>
+                </div>
+
+                <!-- CuidatePlus -->
+                <div class="d-flex align-items-center mr-4">
+                    <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQ_FDRZcAgKVRNL8cITj1B2laYhTPRbVlxKJ2weJ_4yzeNdhLIH" width="30" height="30" class="img-fluid mr-2" alt="CuídatePlus">
+                    <div>
+                        <strong>CuidatePlus</strong>
+                    </div>
+                </div>
+
+                <!-- Lo + trending -->
+                <div class="d-flex align-items-center">
+                    <img src="https://img.utdstc.com/icon/5a1/573/5a1573395a26b3bbc878c95cffa680d60c5463c297793676cb7ab8365a22dcdf:200" width="30" height="30" class="img-fluid mr-2" alt="Lo + trending">
+                    <div>
+                        <strong>Lo + trending</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Logo Marca centrado -->
+            <div class="col-12 col-md-4 text-center">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/v29/img/marca-mx_publisher.png" width="150" height="50" class="img-fluid" alt="Marca">
+            </div>
+
+            <!-- Sección derecha con botones -->
+            <div class="col-12 col-md-4 d-flex justify-content-end align-items-center">
+                <!-- Dropdown con bandera -->
+                <div class="dropdown mr-3">
+                    <button class="btn btn-light dropdown-toggle" type="button" data-toggle="dropdown" aria-expanded="false">
+                        <img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSpJl8JuXqzHxyZYubah6AOb2akbEYoppoyat4B7EchH2Dhf3pC" width="30" height="20" class="img-fluid mr-2" alt="Mexico">MX
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/023/832/950/small_2x/flag-of-spain-spanish-flag-vector.jpg" width="20" height="10" class="img-fluid mr-2" alt="Mexico">ES (España)</a>
+                        <a class="dropdown-item" href="#"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRF1Qm2Qpt6k1OhrDMCkyr9qTGQoa-o3TlfmzLU9XsRa6_cxJhl" width="20" height="10" class="img-fluid mr-2" alt="Mexico">EN (English)</a>                       
+                        <a class="dropdown-item" href="#"><img src="https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSpJl8JuXqzHxyZYubah6AOb2akbEYoppoyat4B7EchH2Dhf3pC" width="20" height="10" class="img-fluid mr-2" alt="Mexico">MX (México)</a>
+                        <a class="dropdown-item" href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/320px-Flag_of_the_United_States.svg.png" width="20" height="10" class="img-fluid mr-2" alt="Mexico">US  (USA)</a>
+                    </div>
+                </div>
+
+                <button type="button" class="btn btn-outline-danger btn-sm">Iniciar sesión</button>
+                
+            </div>
+        </div>
+    </div>
+
+    <!-- Barra de navegación original (inferior) -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-danger py-1">
+        <div class="container-fluid"> 
+            <button class="navbar-toggler ml" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button> 
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-0 d-flex">   
+            <!-- Categorías aquí centradas -->
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <strong>Fútbol</strong>
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdown"> 
+                    <h6 class="dropdown-header">México</h6>  
+                    <span class="dropdown-item-text text-light font-weight-bold">Liga MX</span>
+                    <a class="dropdown-item text-light" href="#">Calendario - Apertura /</a>
+                    <a class="dropdown-item text-light" href="#">Posiciones - Apertura /</a>
+                    <a class="dropdown-item text-light" href="#">Calendario - Claursura /</a>
+                    <a class="dropdown-item text-light" href="#">Posiciones - Claursura /</a>
+                    <span class="dropdown-item-text text-light font-weight-bold">Liga MX Femenil</span>
+                    <span class="dropdown-item-text text-light font-weight-bold">Liga de Expansión MX</span>
+                    <a class="dropdown-item text-light" href="#">Calendario - Apertura /</a>
+                    <a class="dropdown-item text-light" href="#">Calendario - Clausura /</a>
+                    <a class="dropdown-item text-light" href="#">Posiciones - Apertura /</a>
+                    <a class="dropdown-item text-light" href="#">Posiciones - Claursura / Resultados</a>
+                    <span class="dropdown-item-text text-light font-weight-bold">Mexicanos por el mundo</span>
+                    <span class="dropdown-item-text text-light font-weight-bold">Fútbol Femenil</span>
+                    <span class="dropdown-item-text text-light font-weight-bold">Selección Mexicana</span>
+                    <span class="dropdown-item-text text-light font-weight-bold">Fútbol de Estufa</span>                        
+                </div>    
+            </li>
+            
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMotor" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <strong>Motor</strong>
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownMotor">
+                    <h6 class="dropdown-header">Motor</h6>  
+                    <span class="dropdown-item-text text-light font-weight-bold">F1</span>                        
+                    <a class="dropdown-item text-light" href="#">Calendario / Clasificación</a>
+                    <a class="dropdown-item text-light" href="#">Clsificación constructores</a>
+                    <span class="dropdown-item-text text-light font-weight-bold">Motociclismo</span>                        
+                </div>    
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="#" id="navbarDropdownNFL" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <strong>Boxeo</strong>
+                </a>
+            </li>
+
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownNFL" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <strong>NFL</strong>
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownBoxeo">
+                    <span class="dropdown-item-text text-light font-weight-bold">NFL</span>                        
+                    <a class="dropdown-item text-light" href="#">Calendario  /  Posiciones  /  Resultados /  Superbowl</a>
+                </div>    
+            </li>
+
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOtrosDeportes" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <strong>Otros Deportes</strong>
+                </a>
+                <div class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownBoxeo">
+                    <span class="dropdown-item-text text-light font-weight-bold">Básquetbol</span>                        
+                    <a class="dropdown-item text-light" href="https://www.marca.com/mx/basquetbol.html?intcmp=MENUPROD&s_kw=mx-basquetbol">NBA</a>
+                    <span class="dropdown-item-text text-light font-weight-bold">Béisbol</span>                        
+                    <a class="dropdown-item text-light" href="https://www.marca.com/mx/beisbol.html?intcmp=MENUPROD&s_kw=mx-beisbol">Calendario  /  Posiciones</a>
+                    <span class="dropdown-item-text text-light font-weight-bold">Tenis</span>                        
+                    <a class="dropdown-item text-light" href="#">Abierto Mexicano</a>
+                    <span class="dropdown-item-text text-light font-weight-bold">Lucha Libre</span>
+                    <span class="dropdown-item-text text-light font-weight-bold">UFC</span>    
+                    <span class="dropdown-item-text text-light font-weight-bold">Juegos Olímpicos</span>    
+                    <span class="dropdown-item-text text-light font-weight-bold">Juegos Centroamericanos</span>    
+                    <span class="dropdown-item-text text-light font-weight-bold">Juegos Panamericanos</span>
+                </div>    
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><strong>Actualidad</strong></a>
+            </li>
+            <li class="nav-item active">
+                <a class="nav-link" href="#"><strong>Últimas Noticias</strong></a>
+            </li>
+
+            <li class="nav-item dropdown active">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownOtrosDeportes" role="button" data-toggle="dropdown" aria-expanded="false">
+                    <strong>Mas +</strong>
+                </a>
+                <div class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownBoxeo">
+                    <span class="dropdown-item-text text-dark font-weight-bold">Más Secciones</span>
+                    <a class="dropdown-item text-white" href="#">Tecnología</a>
+                    <a class="dropdown-item text-white" href="#">Gaming</a>
+                    <a class="dropdown-item text-white" href="#">Lo + trending</a>
+                    <span class="dropdown-item-text text-dark font-weight-bold">Ediciones</span>
+                    <a class="dropdown-item text-white" href="#">Edición de España</a>
+                    <a class="dropdown-item text-white" href="#">Edición de English</a>
+                    <a class="dropdown-item text-white" href="#">Edición de USA</a>
+                </div>
+            </li>
+          </ul>
+          
+          <!-- Búsqueda -->
+          <form class="form-inline">
+            <div class="input-group input-group-sm"> <!-- input-group-sm hace que sea más pequeño -->
+                <input type="text" class="form-control search-input" placeholder="Buscar" style="width: 60px; font-size: 0.85rem; padding: 0.25rem 0.5rem;">
+                <div class="input-group-append">
+                    <span class="input-group-text" style="padding: 0.25rem;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+                        </svg>
+                    </span>
+                </div>
+            </div>
+        </form>
+        </div>
+      </nav>
+
+          <!-- Nueva barra de navegación que aparece al hacer scroll -->
+    <nav class="navbar navbar-light bg-light navbar-sticky"> 
+        <div class="container ml-5">
+            <ul class="navbar-nav">
+                <li class="nav-item dropdown active">
+                    <a class="nav-link toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWmkUr2Vml1rHA2_QSMzH31dPKvhJFdDOVsHqGQu176X32G8ja" width="30" height="30" class="img-fluid mr-2" alt="marca">
+                        <strong>Portada</strong>
+                    </a>
+            </ul>
+        </div>
+    </nav>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-1">
+        <div class="container">
+            <!-- Logos de equipos de fútbol -->
+            <a class="navbar-brand" href="#">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1292.png" width="30" height="30" class="img-fluid" alt="america">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/853.png" width="30" height="30" alt="cruz azul">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1283.png" width="30" height="30" alt="chivas">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1293.png" width="30" height="30" alt="leon">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/741.png" width="30" height="30" alt="monterrey">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1174.png" width="30" height="30" alt="necaxa">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1295.png" width="30" height="30" alt="pachuca">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1297.png" width="30" height="30" alt="pumas">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/4047.png" width="30" height="30" alt="queretaro">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1287.png" width="30" height="30" alt="santos">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1294.png" width="30" height="30" alt="tigres">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/4690.png" width="30" height="30" alt="tijuana">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/sports/logos/football/png/72x72/1286.png" width="30" height="30" alt="toluca">
+            </a>
+        </div>
+    </nav>
+
+        <script>
+            // Lógica para la barra flotante que aparece al hacer scroll
+            window.addEventListener('scroll', function() {
+                var navbar = document.querySelector('.navbar-sticky');
+                if (window.scrollY > 100) {
+                    navbar.classList.add('show-navbar');
+                } else {
+                    navbar.classList.remove('show-navbar');
+                }
+            });
+        </script>
+    
+<div class="d-flex justify-content-center my-0">
+  <div class="card" style="width: 100%  ;">
+    <h6 class="card-header text-center">Publicidad</h6>
+    <img class="card-img-center" src="https://cloudfront-us-east-1.images.arcpublishing.com/metroworldnews/WWLF2EXWJBGKBDEOZPXRRMB2OM.jpg" alt="Card image cap">
+  </div>
+</div>
+
+<div class="d-flex mt-0">
+  <div class="card" style="width: 22rem;">
+    <img class="card-img-top" src="https://tpc.googlesyndication.com/simgad/6958455826926776362" alt="Card image cap">
+  </div>
+
+  <div class="container md-3 d-flex flex-column">
+    <div class="row g-0">
+        <div class="col-md-8 mb-4">
+            <div class="card h-50">
+                <img src="https://e00-mx-marca.uecdn.es/mx/assets/multimedia/imagenes/2024/05/08/17151979524232.jpg" class="card-img-top" alt="Main news image">
+                <div class="card-body">
+                    
+                    <br>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center my-2">
+                <div class="card" style="width: 1000px;">
+                  <h6 class="card-header text-center">Publicidad</h6>
+                  <img class="card-img-center" src="https://scontent.fgdl3-1.fna.fbcdn.net/v/t39.30808-6/456108779_1120724922947504_7772493544528137731_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=cc71e4&_nc_ohc=1H9kVwIGOh4Q7kNvgEYspLx&_nc_ht=scontent.fgdl3-1.fna&oh=00_AYCVLhC0D7gom0qi6xxF7Oz5oz9m8L450n0Z9eXeqx3Y8w&oe=66E6E6F2" alt="Card image cap">
+                </div>
+              </div>
+        </div>
+
+        <div class="col-md-4">
+            <div class="card mb-3">
+                <img src="https://phantom-marca-mx.unidadeditorial.es/04b21a7928229b7d870130f7be56093b/resize/990/f/webp/mx/assets/multimedia/imagenes/2024/09/10/17259405929481.jpg" class="card-img-top" alt="News image">
+                <div class="card-body">
+                    <h6 class="card-title">Resumen Diablos Rojos vs. Sultanes</h6>
+                    <p class="card-text small text-danger">MLB </p>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <img src="https://phantom-marca-mx.unidadeditorial.es/9d577ca1d27547acfb798a877748f403/resize/828/f/webp/mx/assets/multimedia/imagenes/2024/09/09/17258996848361.jpg" class="card-img-top" alt="News image">
+                <div class="card-body">
+                    <h6 class="card-title">Pato O'Ward enfrenta su mayor reto</h6>
+                    <p class="card-text small text-danger">Motor
+                    </p>
+                </div>
+            </div>
+
+            <div class="card mb-3">
+                <img src="https://media.admagazine.com/photos/637d4dd30bd425d9f442021a/16:9/w_2560%2Cc_limit/seleccion-mexicana.jpg" class="card-img-top" alt="News image">
+                <div class="card-body">
+                    <h6 class="card-title">México vs Canadá: Javier Aguirre confirma a Malagón y Chino Huerta titulares</h6>
+                    <p class="card-text small text-danger">Selección Nacional</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+    </div>
+    <div class="card-group">
+      <div class="card">
+        <img src="https://cdn-3.expansion.mx/dims4/default/7e7dbb6/2147483647/strip/true/crop/1200x800+0+0/resize/1200x800!/format/webp/quality/60/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F48%2F80%2F20ff57fc47baac1654b740200333%2Fcristiano-ronaldo-firma-equipo-al-nassr-arabia-saudita.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Cristiano Ronaldo recuerda a Chicharito</h5>
+          <p class="card-text fw-bold text-danger">Fútbol</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://phantom-marca-mx.unidadeditorial.es/85cad098211cfc913271bf309f10ba27/resize/828/f/jpg/mx/assets/multimedia/imagenes/2024/09/07/17256675804578.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Eduardo Berizzo debutará en el León vs Cruz Azul: "Me convencieron muy rápido"</h5>
+          <p class="card-text text-danger">Liga MX</p>
+        </div>
+      </div>
+      <div class="card">
+        <img src="https://phantom-marca-mx.unidadeditorial.es/cd1cb76e35f3f0e6d7c4342fdd3b5a1b/resize/828/f/webp/mx/assets/multimedia/imagenes/2024/09/08/17257915145978.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Checo Pérez es descartado por Verstappen en el futuro</h5>
+          <p class="card-text text-danger">Fórmula 1</p>
+        </div>
+      </div>
+    </div>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item fw-bold">Es noticia:</a></li>
+        <li class="breadcrumb-item">Vuelta a España</a></li>
+        <li class="breadcrumb-item">Rafa Mir</li>
+        <li class="breadcrumb-item">Morata y Alice Campello</li>
+        <li class="breadcrumb-item">Etapa hoy vuelta España</li>
+        <li class="breadcrumb-item">Cuando Juega Paulo Badosa</li>
+        <li class="breadcrumb-item">McLAren y Mercedes</li>
+        <li class="breadcrumb-item">Daniel Sancho</li>
+        <li class="breadcrumb-item">Niño Becerra</li>
+        <li class="breadcrumb-item">España Cotizantes</li>
+      </ol>
+    </nav>
+    <div class="row" style="position: relative;">
+      <div class="card mb-3" style="max-width: 680px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://phantom-marca-mx.unidadeditorial.es/3c79f14bc452b553de419ebd408cf3d0/resize/828/f/webp/mx/assets/multimedia/imagenes/2023/06/10/16863762022364.jpg" class="img-fluid" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">Próxima pelea del Canelo Álvarez vs Jermell Charlo: qué pasó y cuándo es la 2da conferencia</h5>
+              <p class="card-text text-danger">Boxeo</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-6" style="max-width: 680px; position: relative; right: 0; bottom: 0;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img src="https://phantom-marca-mx.unidadeditorial.es/11304cd234ca7996832e124af20b29e0/resize/990/f/webp/mx/assets/multimedia/imagenes/2024/09/08/17258216828543.jpg" class="img-fluid" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title">¿Quién es Kendrick Lamar? Lo anuncian como estrella principal del Halftime en el Super Bowl LIX</h5>
+              <p class="card-text text-danger">Super Bowl</p>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+    </div>
+    <footer class="bg-dark text-white pt-4">
+        <div class="container">
+          <div class="row">
+            <!-- Columna 1 -->
+            <div class="col-sm-6 col-md-3">
+              <h5>Marca</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">App Marca</a></li>
+                <li><a href="#" class="text-white">Apuestas Deportivas</a></li>
+                <li><a href="#" class="text-white">Clasificación LaLiga</a></li>
+                <li><a href="#" class="text-white">Calendario LaLiga</a></li>
+                <li><a href="#" class="text-white">Marca eSports</a></li>
+              </ul>
+            </div>
+            <!-- Columna 2 -->
+            <div class="col-sm-6 col-md-3">
+              <h5>Ocio y Moda</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Tiramillas</a></li>
+                <li><a href="#" class="text-white">Moda - Telva</a></li>
+                <li><a href="#" class="text-white">BUHO Magazine</a></li>
+                <li><a href="#" class="text-white">Traductor</a></li>
+                <li><a href="#" class="text-white">Programación TV</a></li>
+              </ul>
+            </div>
+            <!-- Columna 3 -->
+            <div class="col-sm-6 col-md-3">
+              <h5>Unidad Editorial</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">El Mundo</a></li>
+                <li><a href="#" class="text-white">Expansión</a></li>
+                <li><a href="#" class="text-white">Diario Médico</a></li>
+                <li><a href="#" class="text-white">Correo Farmacéutico</a></li>
+                <li><a href="#" class="text-white">CuidatePlus</a></li>
+              </ul>
+            </div>
+            <!-- Columna 4 -->
+            <div class="col-sm-6 col-md-3">
+              <h5>Formación y Empleo</h5>
+              <ul class="list-unstyled">
+                <li><a href="#" class="text-white">Escuela Unidad Editorial</a></li>
+                <li><a href="#" class="text-white">Unidad Editorial</a></li>
+                <li><a href="#" class="text-white">Expansión y Empleo</a></li>
+              </ul>
+            </div>
+          </div>
+          <hr class="bg-light">
+          <!-- Sección inferior -->
+          <div class="row">
+            <div class="col-md-6">
+              <p>&copy; 2023 Unidad Editorial Información Deportiva, S.L.U. Todos los derechos reservados.</p>
+              <ul class="list-inline">
+                <li class="list-inline-item"><a href="#" class="text-white">Términos y condiciones</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white">Política de privacidad</a></li>
+                <li class="list-inline-item"><a href="#" class="text-white">Política de cookies</a></li>
+              </ul>
+            </div>
+            <div class="col-md-6 text-md-end">
+              <span>Síguenos en:</span>
+              <a href="#" class="ms-2"><i class="fab fa-facebook fa-lg text-white"></i></a>
+              <a href="#" class="ms-2"><i class="fab fa-twitter fa-lg text-white"></i></a>
+              <a href="#" class="ms-2"><i class="fab fa-instagram fa-lg text-white"></i></a>
+              <a href="#" class="ms-2"><i class="fab fa-youtube fa-lg text-white"></i></a>
+              <a href="#" class="ms-2"><i class="fas fa-rss fa-lg text-white"></i></a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      
+    </div>
+  
+  </div>   
+
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+</body>
+
+</html>
